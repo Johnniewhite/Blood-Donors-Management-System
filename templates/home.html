@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<form action="{{ url_for('search', query=search_query) }}" method="GET">
+    <input type="text" name="search_query" placeholder="Search by name">
+    <button type="submit">Search</button>
+</form>
+
+
+<br><br>
+{{ table|safe }}
+{% endblock content %}

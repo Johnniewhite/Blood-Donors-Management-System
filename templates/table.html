@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form action="{{ url_for('search') }}" method="POST">
+    <label for="column_name">Column name:</label>
+    <select id="column_name" name="column_name">
+        <option value="Name">Name</option>
+        <option value="Sex">Sex</option>
+        <option value="Date_Of_Birth(d/m/y)">Date of Birth</option>
+        <option value="LGA">LGA</option>
+        <option value="Genotype">Genotype</option>
+        <option value="Blood_Group">Blood Group</option>
+        <option value="Frequency(months)">Frequency (months)</option>
+        <option value="Phone_Number">Phone Number</option>
+    </select>
+    <input type="text" name="search_query" placeholder="Search query">
+    <button type="submit">Search</button>
+</form>
+
+<table id="results">
+  <tr>
+    <th>Name</th>
+    <th>Sex</th>
+    <th>Date of Birth</th>
+    <th>LGA</th>
+    <th>Genotype</th>
+    <th>Blood Group</th>
+    <th>Frequency (months)</th>
+    <th>Phone Number</th>
+    <th>Email Address</th>
+  </tr>
+  {% for result in search_results %}
+  <tr>
+    <td>{{ result.Name }}</td>
+    <td>{{ result.Sex }}</td>
+    <td>{{ result.Date_Of_Birth }}</td>
+    <td>{{ result.LGA }}</td>
+    <td>{{ result.Genotype }}</td>
+    <td>{{ result.Blood_Group }}</td>
+    <td>{{ result.Frequency }}</td>
+    <td>{{ result.Phone_Number }}</td>
+    <td>{{ result.Email_Address }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}

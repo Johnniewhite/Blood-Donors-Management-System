@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+<fieldset class="form-group">
+<legend class="border-bottom mb-4"><h2>Add a New Entry to the form</h2></legend>
+<form method="post" action="{{ url_for('add_entry') }}" enctype="multipart/form-data">
+  <div class="form-group">
+  	<label for="Name" class="form-control-label">Name:</label><br>
+  <input type="text" class="form-control form-control-lg" id="Name" name="Name"><br>
+</div>
+<div class="form-group">
+  <label class="form-control-label" for="Sex">Sex:</label><br>
+  <select id="Sex" class="form-control form-control-lg" name="Sex">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+</div>
+  <br>
+  <br>
+  <div class="form-group">
+    <label class="form-control-label" for="Date_Of_Birth">Date of Birth</label><br>
+<input type="Date" class="form-control form-control-lg" id="Date_Of_Birth" name="Date_Of_Birth"></div>
+<br>
+<br>
+<div class="form-group">
+  <label class="form-control-label" for="LGA">LGA:</label><br>
+  <select class="form-control form-control-lg" id="LGA" name="LGA">
+    <option value="Agege">Agege</option>
+    <option value="Alimosho">Alimosho</option>
+    <option value="Apapa">Apapa</option>
+    <option value="Ifako-Ijaye">Ifako-Ijaye</option>
+    <option value="Ikeja">Ikeja</option>
+    <option value="Kosofe">Kosofe</option>
+    <option value="Mushin">Mushin</option>
+    <option value="Oshodi-Isolo">Oshodi-Isolo</option>
+    <option value="Shomolu">Shomolu</option>
+    <option value="Eti-Osa">Eti-Osa</option>
+    <option value="Lagos Island">Lagos Island</option>
+    <option value="Lagos Mainland">Lagos Mainland</option>
+    <option value="Surulere">Surulere</option>
+</select>
+</div>
+<br>
+<div class="form-group">
+  <label class="form-control-label" for="Genotype">Genotype:</label><br>
+  <select class="form-control form-control-lg" id="Genotype" name="Genotype">
+    <option value="AA">AA</option>
+    <option value="AS">AS</option>
+    <option value="SS">SS</option>
+    <option value="AC">AC</option>
+    <option value="SC">SC</option>
+    <option value="CC">CC</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label class="form-control-label" for="Blood_Group">Blood Group</label><br>
+  <select class="form-control form-control-lg" id="Blood_Group" name="Blood_Group">
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label class="form-control-label" for="Frequency">Frequency(months):</label><br>
+  <input class="form-control form-control-lg" type="text" id="Frequency" name="Frequency"><br><br>
+</div>
+<div class="form-group">
+  <label class="form-control-label" for="Phone_number">Phone Number:</label><br>
+  <input type="text" class="form-control form-control-lg" id="phone_number" name="phone_number"><br><br>
+</div>
+<div class="form-group">
+   <label class="form-control-label" for="Email">Email Address:</label><br>
+  <input type="email" class="form-control form-control-lg" id="Email" name="Email"><br><br>
+</div>
+  
+  <input type="submit" class="btn btn-outline-info" value="Submit", class="btn btn-primary">
+</form> 
+</fieldset>
+</div>
+<script>
+  function showAlert() {
+    alert("Entry added successfully!");
+  }
+</script>
+
+{% endblock content %}

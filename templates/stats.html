@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+<h4>Pie chart Representation of Blood Groups</h4>
+<img src="{{ url_for('static', filename='/images/blood_group_piechart.png') }}" alt="Blood Groups Chart" width="500px">
+
+<img src="{{ url_for('static', filename='/images/lga_bar_chart.png') }}" alt="Bar Chart showing the lga with more donors" width="500px">
+{% endblock content %}
